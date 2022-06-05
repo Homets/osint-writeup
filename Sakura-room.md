@@ -7,7 +7,8 @@
 
 Here the image the attacker send us.
 
-![[/sakurapwnedletter.svg ]]
+![sakurapwnedletter](https://user-images.githubusercontent.com/82462804/172058604-2a84dfea-0be5-411e-ae2d-2aeabc232ea8.svg)
+
 
 
 ***Question : 
@@ -60,7 +61,8 @@ We can see with the Export-filename chunk some useful information like the possi
   
 Do a simple google search to try to find something  : 
 
-![[googlesearch.png]]
+![googlesearch](https://user-images.githubusercontent.com/82462804/172058635-534d4d55-a84f-447a-91c3-fa657ac5644c.png)
+
 These are some interesting things, let's find something in the first link, the github :
 
 On pinned repository we can find a PGP repo. 
@@ -124,7 +126,8 @@ But unfortunately the website was down when im doing this challenge so let's use
 
 *The Dark Web site for this answer may go up and down for hours at a time. If the website has been down for multiple days, or if you do not feel comfortable searching the Dark Web, you can view this screenshot to help complete the tasks in this section: https://raw.githubusercontent.com/OsintDojo/public/main/deeppaste.png*
 
-the image above is .![[deeppaste.png]]
+the image above is ![deeppaste](https://user-images.githubusercontent.com/82462804/172058657-1f1b601f-194a-4800-88ff-7f2a939231e5.png)
+
 
 The challenge is easier with this screenshot, we just need to paste the md5 on the md5 query of the url.
 
@@ -145,14 +148,16 @@ Let's use the useful [wigle.net](https://wigle.net/) let's do some advanced sear
 Here is the tweet picture and text we need to analyse.
 
 >Checking out some last minute cherry blossoms before heading home!
-![[search.jpg]]
+![search](https://user-images.githubusercontent.com/82462804/172058663-41a7a732-82e7-4695-b8b2-fe7a6ce92a49.jpg)
+
 
 This picture have a Weakness, on the background we can see an obelisk, this picture don't need reverse image, just google "cherry flower obelisk" and we have the place, the Washington Monument, check the airport the closest with "Washington Monument airport" search, and now we know this is Ronald Reagan Washington National Airport (DCA).
 
 **What airport did the attacker have their last layover in?**
 
 >My final layover, time to relax!
-![[layover.png]]
+![layover](https://user-images.githubusercontent.com/82462804/172058693-86346a74-9360-415a-a011-2bdef8e1b64f.png)
+
 
 We see that the place is rated 5 stars on skytrax, the japan airline badge, and that we are in a sakura lounge. let's google this "5 star airline skytrax sakura lounge JAL", go to the images and see this, probably in the same place but from another angle.![[lounge.webp]]
 
@@ -163,7 +168,8 @@ go on the website and the information of the airport are writed.
 
 >Sooo close to home! Can't wait to finally be back! :)
 
-![[earth.jpg]]The first tool that come to mind is simply google earth, We see a huge body of water, this is possibly our lake, let's retry to have this view and zoom, Now we have the name of this lake, the *Lake Inawashiro*.
+![earth](https://user-images.githubusercontent.com/82462804/172058703-19584928-576a-4d6a-8963-23648e345747.jpg)
+The first tool that come to mind is simply google earth, We see a huge body of water, this is possibly our lake, let's retry to have this view and zoom, Now we have the name of this lake, the *Lake Inawashiro*.
 
 **What city does the attacker likely consider "home"?**
 
