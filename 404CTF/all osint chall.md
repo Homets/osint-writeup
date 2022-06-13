@@ -1,7 +1,7 @@
-### 404 CTF
+# 404 CTF
 
+![challenge_404_LOGO](https://user-images.githubusercontent.com/82462804/173377803-beef051b-2cd3-4b00-8ae7-3f68adbb88ea.png)
 
-[[LOGO 404CTF
 
 *Né d’une collaboration entre la _Direction Générale de la Sécurité Extérieure_ et _Télécom SudParis_, le 404 CTF met à l’honneur le double anniversaire que cette année 2022 marque : les 80 ans du _BCRA_, le service secret de la France libre et les 40 ans de son héritier, la DGSE.*
 
@@ -14,13 +14,15 @@
 
 *Un de nos agents a retrouvé un équipement qui a été utilisé pour communiquer des données sensibles. Mais de quoi s'agit-il ? Il faudrait trouver la date d'arrêt de cet équipement en France, pour savoir quelle piste privilégier pour la suite de l'enquête.*
 
-*Format du flag : 404CTF{jj_mm_aaaa}*
+Format du flag : 404CTF{jj_mm_aaaa}
 
-[[IMAGE CHALL 1]]
+![equipement_desuet](https://user-images.githubusercontent.com/82462804/173378586-4ec34d31-18d0-4d64-83fb-00a13a7ea7a6.jpg)
+
 
 On reconnait facilement le minitel fait sinon en zoomant on voit bien écrit Telic Alcatel donc en une simple recherche google nous avons le nom de l'appareil, puis pour finir la page [Wikipédia](https://fr.wikipedia.org/wiki/Minitel#Arr%C3%AAt_du_service) pour trouver la date d'arrêt de cet équipement en France.
 
-[[IMAGE WIKIPEDIA MINITEL]]
+![edc5a1d0ad48bb314514ba9f8777a92a](https://user-images.githubusercontent.com/82462804/173378655-9b9564ab-e5aa-4f74-aea7-f124802c0312.png)
+
 
 404CTF{30_06_2012}
 
@@ -32,7 +34,8 @@ Vu la description du challenge on pense immédiatement au site de la Wayback Mac
 
 Commençons par le site https://ctf.404ctf.fr/, dans l'url du site la technique est de rajoutée un asterisk à la find de l'url pour que la wayback nous retourne toutes les pages qui commence par l'url.
 
-[[IMAGE WAYBACK 798 URL]]
+![659d16f05d99383d272fa1dc001df56f](https://user-images.githubusercontent.com/82462804/173378796-94775fd9-2e2c-414b-9ce6-bd770007041c.png)
+
 
 Voici 798 url, filtrons tous ça car seulement les MIME Type "text/html" nous intéresse ici, mais en cherchant aucun flag n'est dans le sous-domaine ctf.
 Allons maintenant sur le site principal https://www.404ctf.fr/, même démarche avec l'url "https://www.404ctf.fr/*". Nous n'avons que 49 url, ça tient sur une page, il y a 3 text/html donc fouillons un peu dans cela. Et sur la page crédit sur le premier archivage effectué. nous tombons sur 404CTF{R3G4rd3r_3n_arr13r3_p3uT_3tR3_1Nt3r3ss4Nt}.
@@ -47,9 +50,10 @@ Allons maintenant sur le site principal https://www.404ctf.fr/, même démarche 
 *Format du flag : `404CTF{md5 du nom complet de la rue}`  
 *Le nom de la rue doit être en **minuscule**, inclure le **type de rue** ( *ex : avenue, rue, boulevard... ), **sans accents**, **sans *abréviation**, **et tous les espaces doivent être remplacés par des *tirets**. Par exemple : si la rue est l'Avenue de Saint-Mandé à Paris, le flag *correct est 404CTF{129af9edde5659143536427f9a5f659a}.
 
-[[IMAGE ]]
+![Lieu](https://user-images.githubusercontent.com/82462804/173379382-f806c202-80d2-4525-94f2-7acb4dfd723e.jpg)
 
-[[IMAGE DESSIN]]
+![Lieu_dessin](https://user-images.githubusercontent.com/82462804/173379403-72d8147b-9b81-4ece-a287-0c9317b07b79.jpg)
+
 
 Voilà 3 axe qui vont nous intéresser :
 - En bleu => 3 tour dont une avec une forme spéciale
@@ -60,12 +64,11 @@ Déjà nous remarquons que nous somme en "hauteur",  au loin, on remarque bien q
 
 Donc nous avons le lieu, allons sur google earth pour une vue aériennes et satellitaires. Le but sera de s'aligner comme sur la photo.
 
-[[image google aligner]]
-
+![b3480557c0612c2f79331eeba56ad9eb](https://user-images.githubusercontent.com/82462804/173381332-d0e62eab-c84d-4e72-b0f0-d8eedaf008a0.png)
 
 Prenons un peu de hauteur =>  
 
-[[ image vue de hauteur]]
+![vue_de_haut](https://user-images.githubusercontent.com/82462804/173382038-fc378ddd-cba5-4390-bf98-cc9315cf76e8.png)
 
 
 Nous voilà à la Montée Saint-Barthélémy, nous manque plus que de faire le md5 de la rue avec les consignes données par la description. Et nous voilà avec le flag.
@@ -81,12 +84,15 @@ Nous voilà à la Montée Saint-Barthélémy, nous manque plus que de faire le m
 
 *Nous soupçonnons notamment le club de cybersécurité HackademINT de Télécom SudParis de s'être fait infiltrer en cette fin d'année scolaire. Nous avons récupéré une photo de leur local assez récente. Utilisez la pour identifier le ou les nouveaux membres du club et dénicher une preuve de leur appartenance à .*
 
+![Local_HackademINT](https://user-images.githubusercontent.com/82462804/173382290-34124437-fcb0-4783-9e72-87dd4e463d6e.jpg)
 
-[[IMAGE NOUS SOMME INFILTRE]]
+
 
 Première chose à faire, regarder tous les pseudos sur root-me. Aucun compte n'a de chose intéressante à l'exception de Xx_Noel_Janvier_xX, on apprend qu'il est nouveau à TSP et il redirige vers un site web. Allons regarder le site [gorfouland](https://e10pthes.github.io/about/).
 Sur un des scripts js sur le developpers tools on y vois ```Il n'y a pas de flag ici, si c'est ce que vous cherchez ! Mais vous êtes sur la bonne piste en``` et aussi un lien vers le compte twitter du créateur du site. Inspectons maintenant le compte twitter. Pas de tweet suspect mais dans la section "Tweets et réponses", un commentaire nous intrigue :
-[IMAGE TWITTER TWEET REDIRECT ]
+
+![tweet-redirect](https://user-images.githubusercontent.com/82462804/173383131-986b8682-5492-480f-8a12-dbdfca48ea49.png)
+
 
 Suspect non ? Regardons de plus près le compte de ce fameux Pablo Sintera, la biographie est plutôt équivoque.
 
@@ -97,7 +103,8 @@ Outre le fait qu'il aime les combat médievaux on y voit aussi une référence �
 Maintenant nous savons où est le problème, ne reste plus qu'a trouver comment y accéder. 
 La wayback machine ne donne rien, mais quand on regarde bien, le site gorfouland est un site github.io, ce qui nous indique qu'il y'a un compte github associé. [Voila le github](https://github.com/e10Pthes), allons voir les commit de la page about. 
 
-[[IMAGE COMMIT ]]
+![commit](https://user-images.githubusercontent.com/82462804/173383271-3934fe3e-1b1d-48c8-bc07-c763344909c7.png)
+
 
 
 Nous pouvons voir sur un commit 
@@ -140,9 +147,11 @@ Après avoir lu tous les avis plein de choses ressort, il s'est marié à clermo
 Peut-être la fameuse organisation, et la fameuse rencontre, mais comment savoir le jour, malgré le fait que ce soit début mars, et la destination ? 
 
 Analysons l'avion => 
-[[IMAGE AVION]]
 
-L'Avion à la référence F-GRHL, pourquoi pas allez voir tous les vols de cet avion début mars sur le site https://www.flightera.net/planes/F-GRHL . 
+![avion1](https://user-images.githubusercontent.com/82462804/173383395-3e29e3af-02d2-4c5e-800f-829a96e69b67.jpg)
+
+
+L'Avion a la référence F-GRHL, pourquoi pas aller voir tous les vols de cet avion début mars sur le site https://www.flightera.net/planes/F-GRHL . 
 Nous prenons une fourchette du premier au 15 mars, et notons tous les avions en route vers le sud qui sont parti en retard.
 
 Nous avons pas mal d'avion nous reste plus qu'a essayer. Après quelque essais, Challenge réussi avec le flag 404CTF{malaga_08_03_2022}
